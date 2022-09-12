@@ -11,7 +11,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const catalogRouter = require('./routes/catalog'); //Import routes for "catalog" area of site
 
-const compression = require('comrpession'); // require the compression library
+const compression = require('compression'); // require the compression library
 const helmet = require('helmet'); // require the helmet library
 
 // Create the app object using our imported express module
@@ -19,8 +19,9 @@ const app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB =
+const dev_db_url =
   'mongodb+srv://jelugbad:tmtklmRR89@cluster0.ubss4nj.mongodb.net/?retryWrites=true&w=majority';
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
