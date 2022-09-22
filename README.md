@@ -1,2 +1,2 @@
 # Express-Library-Tutorial
-Library website written in Express (Node) that I built as the culmination of the MDN web development docs learning curriculum
+This is a "Local Library" web app written in Express (Node.js) that I built as practice to complete the MDN web development docs learning curriculum
