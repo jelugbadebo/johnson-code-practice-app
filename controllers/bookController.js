@@ -30,7 +30,11 @@ exports.index = (req, res) => {
       },
     },
     (err, results) => {
-      res.render('index', { title: 'Local Library Home', error: err, data: results });
+      res.render('index', {
+        title: 'Johnson\'s "Local Library" Full-Stack Code Practice App',
+        error: err,
+        data: results,
+      });
     }
   );
 };
